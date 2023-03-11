@@ -1,0 +1,16 @@
+* {
+    box-sizing: content-box;
+}
+
+.points {
+    border-bottom: 0.1vh solid  #000080;
+}
+
+.img__bayan {
+    width: 0%;
+}
+
+.points__name:hover + .img__bayan{
+    /* transform: scale(2);  */
+    width: 15%;
+}
