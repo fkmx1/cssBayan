@@ -1,16 +1,45 @@
 * {
     box-sizing: content-box;
+    background: rgb(239, 212, 168);
+}
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 35em;
 }
 
-.points {
+.points-block {
     border-bottom: 0.1vh solid  #000080;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
 }
 
 .img__bayan {
-    width: 0%;
+    width: 0em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.points__name:hover + .img__bayan{
+.points__row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.points__row:hover + .img__bayan{
     /* transform: scale(2);  */
-    width: 15%;
+    width: 25em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+}
+
+.point__name{
+    font-size: 2em;
+}
+
+.icon__plus {
+    width: 1.5em;
+    height: 1.5em;
 }
