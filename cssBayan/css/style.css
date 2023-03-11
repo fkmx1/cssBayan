@@ -14,32 +14,49 @@
     margin-right: auto;
     margin-bottom: 1em;
 }
+.icon__plus, .icon__cross{
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.icon__cross {
+    display: none;
+}
 
 .img__bayan {
     width: 0em;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.points__row{
-    display: flex;
-    justify-content: space-between;
-}
-
-.points__row:hover + .img__bayan{
-    /* transform: scale(2);  */
-    width: 25em;
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1em;
 }
 
+.points__row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.points__row:hover + .img__bayan{
+    animation-name: image-change;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.points__row:hover > .icon__plus{
+    display: none;
+}
+
+.points__row:hover > .icon__cross{
+    display: block;
+}
+
+@keyframes image-change{
+    100%{
+        width: 22.5em;
+    }
+}
+
 .point__name{
     font-size: 2em;
 }
 
-.icon__plus {
-    width: 1.5em;
-    height: 1.5em;
-}
