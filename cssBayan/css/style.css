@@ -2,25 +2,48 @@
     box-sizing: content-box;
     background: rgb(239, 212, 168);
 }
-.container{
-    margin-left: auto;
-    margin-right: auto;
-    width: 35em;
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.points-block{ 
+    color: rgb(71, 71, 218);
+}
+
+.points-block:active > .points__row > .point__name{ 
+    color: rgb(71, 71, 218) !important;
+}
+
+.point__name {
+    border-bottom: 0.1em solid  #858585;
 }
 
 .points-block {
-    border-bottom: 0.1vh solid  #000080;
+    
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1em;
 }
-.icon__plus, .icon__cross{
+
+.icon__plus{
     width: 1.2em;
     height: 1.2em;
+    display: none;
 }
 
-.icon__cross {
-    display: none;
+.menu:hover > .points-block > .points__row > .point__icon > .icon__plus {
+    display: block;
+}
+
+
+
+/* .menu:hover > .points-block > .points__row > .icon__plus {
+    display: block;
+} */
+
+.menu:hover > .points-block > .points__row > .point__name {
+    color:black;
 }
 
 .img__bayan {
@@ -34,29 +57,41 @@
 .points__row {
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
 }
 
-.points__row:hover + .img__bayan{
+.points-block:hover > .img__bayan{
     animation-name: image-change;
-    animation-duration: 1s;
+    animation-duration: 0.75s;
     animation-fill-mode: forwards;
+    
 }
 
-.points__row:hover > .icon__plus{
-    display: none;
+.points-block:hover > .points__row > .point__icon > .icon__plus{
+    transform: rotate(45deg);
 }
 
-.points__row:hover > .icon__cross{
-    display: block;
-}
 
 @keyframes image-change{
     100%{
-        width: 22.5em;
+        width: 20em;
     }
 }
 
 .point__name{
-    font-size: 2em;
+    font-size: 1.8em;
 }
 
+input:checked ~ .img__bayan{
+    width: 20em;
+}
+
+input:checked + .points__row > .point__name{
+    color: black;
+}
+
+
+
+input{
+    opacity: 0;
+}
